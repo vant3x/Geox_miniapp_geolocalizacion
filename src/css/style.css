@@ -4,7 +4,7 @@
 footer{
     text-align: center;
     margin: 20px auto;
-    background: #09f;
+    background: rgb(5, 127, 209);
     padding: 20px;
  
     color:#fff;
@@ -12,4 +12,11 @@ footer{
 footer a{
     color:#fff;
     font-size: 18px;
+}
+
+.blue{
+    background: #09f;
+}
+.mi-linkba{
+    color:#fff;
 }
