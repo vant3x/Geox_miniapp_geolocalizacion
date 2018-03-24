@@ -68,8 +68,13 @@ function calculatedDistance(place, origen) {
         // Se ejecuta cuando el servicio de distancia de Maps nos responde
         // probar  console.log(respuesta) antes de la linea de abajo ->  const distancia 
         //console.log(respuesta);
-        var distancia = respuesta.rows[0].elements[0];
+        var info = respuesta.rows[0].elements[0];
 
-        console.log(distancia);
+        console.log(info);
+
+        var distancia = info.distance.text;
+        var duracion = info.duration.text;
+
+        document.getElementById('info').innerHTML = "\n            Est\xE1s a " + distancia + " y " + duracion + " de dicho destino\n        ";
     });
 }
