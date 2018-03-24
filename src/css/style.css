@@ -1,0 +1,15 @@
+#map{
+    height: 400px;
+}
+footer{
+    text-align: center;
+    margin: 20px auto;
+    background: #09f;
+    padding: 20px;
+ 
+    color:#fff;
+}
+footer a{
+    color:#fff;
+    font-size: 18px;
+}
