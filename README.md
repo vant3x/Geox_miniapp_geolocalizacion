@@ -11,4 +11,4 @@ Con la nueva key generada ahora reemplazan la key predefinida en el proyecto
   ![captura de pantalla 2018-03-24 a la s 3 49 15 a m](https://user-images.githubusercontent.com/11634391/37862153-60873dd8-2f16-11e8-9d6f-d98c30ff4903.png)
   
   ## NOTA 2:
-  Parece que en algunas versiones más actuales de Chrome el proyecto no corre del todo bien, pero en otros navegadores como Firefox no hay problema, igual deberan probar si todo funciona. 
+  Parece que en algunas versiones más actuales de Chrome el proyecto no corre del todo bien, pero en otros navegadores como Firefox no hay problema, igual deberían probar si todo funciona. 
