@@ -2,11 +2,26 @@
 
 var nombre = "Alejandro";
 
+var travelMode;
 google.maps.event.addDomListener(window, "load", function () {
     // Geolocation => Navigator
     var user_location = new UserLocation(function () {
-        // configuraciones mapa, zoom, latitud y longitud
+        // Aquí ya cargamos los mapas y además cargamos localizacion
+
+        travelMode = document.getElementById('travel-mode').value;
+
+        if (travelMode == "0") {
+            document.getElementById('travel-mode').addEventListener("change", function () {
+                // nota (agregar setTimeOut con style.display = "none")
+                document.getElementById('load-travel-mode').style.display = "none";
+                travelMode = ev.target.value;
+            });
+        } else {
+            document.getElementById('load-travel-mode').style.display = "none";
+        }
+
         var mapOptions = {
+            // configuraciones mapa, zoom, latitud y longitud
             zoom: 6,
             center: {
                 lat: user_location.latitude,
@@ -64,7 +79,7 @@ function calculatedDistance(place, origen) {
         destinations: [place.geometry.location],
         // modo de transporte, driving
         // TravelMode != travelMode
-        travelMode: google.maps.TravelMode.DRIVING
+        travelMode: google.maps.TravelMode[travelMode]
     }, function (respuesta, status) {
         // Se ejecuta cuando el servicio de distancia de Maps nos responde
         // probar  console.log(respuesta) antes de la linea de abajo ->  const distancia 
