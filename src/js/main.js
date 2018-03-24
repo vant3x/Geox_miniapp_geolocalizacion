@@ -3,5 +3,9 @@
 var nombre = "Alejandro";
 
 window.addEventListener("load", function () {
-    console.log("Hola Mundo!, bienvenido " + nombre);
+        // Geolocation => Navigator
+        var user_location = new UserLocation(function () {
+                console.log("Ya tenemos la localizacion yeii!!");
+                console.log(user_location);
+        });
 });
