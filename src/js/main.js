@@ -39,13 +39,14 @@ google.maps.event.addDomListener(window, "load", function () {
                 map.setCenter(place.geometry.location);
                 map.setZoom(15);
             }
-
+            // marcadores 
             marker.setPlace({
                 placeId: place.place_id,
                 location: place.geometry.location
             });
 
             marker.setVisible(true);
+            // fin marcadores
 
             calculatedDistance(place, user_location);
         });

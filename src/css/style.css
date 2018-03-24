@@ -1,3 +1,7 @@
+html,body{
+    height: 100%;
+    
+}
 #map{
     height: 400px;
 }
@@ -19,4 +23,15 @@ footer a{
 }
 .mi-linkba{
     color:#fff;
+}
+#info{
+    font-size: 18px;
+}
+.full-screen{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index:100;
+    text-align: center;
+    background: rgba(250,250,250,0.8);
 }
