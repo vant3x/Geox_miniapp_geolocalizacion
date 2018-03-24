@@ -5,6 +5,7 @@ var nombre = "Alejandro";
 google.maps.event.addDomListener(window, "load", function () {
     // Geolocation => Navigator
     var user_location = new UserLocation(function () {
+        // configuraciones mapa, zoom, latitud y longitud
         var mapOptions = {
             zoom: 6,
             center: {
@@ -45,6 +46,30 @@ google.maps.event.addDomListener(window, "load", function () {
             });
 
             marker.setVisible(true);
+
+            calculatedDistance(place, user_location);
         });
     });
 });
+
+function calculatedDistance(place, origen) {
+    var origin = new google.maps.LatLng(origen.latitude, origen.longitude);
+
+    var service = new google.maps.DistanceMatrixService();
+
+    service.getDistanceMatrix({
+        origins: [origin],
+        // localizacion de lugar
+        destinations: [place.geometry.location],
+        // modo de transporte, driving
+        // TravelMode != travelMode
+        travelMode: google.maps.TravelMode.DRIVING
+    }, function (respuesta, status) {
+        // Se ejecuta cuando el servicio de distancia de Maps nos responde
+        // probar  console.log(respuesta) antes de la linea de abajo ->  const distancia 
+        //console.log(respuesta);
+        var distancia = respuesta.rows[0].elements[0];
+
+        console.log(distancia);
+    });
+}
